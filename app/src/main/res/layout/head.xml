@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#0ff"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+        <!--标题-->
+        <TextView
+            android:id="@+id/head_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_vertical"
+            android:textColor="#333"
+            android:textSize="15dp" />
+        <!--返回键-->
+        <ImageButton
+            android:id="@+id/head_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:contentDescription="@string/app_name"
+            android:onClick="onBack"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:src="@drawable/back" />
+        <!--搜索按键-->
+        <!--<TextView-->
+            <!--android:id="@+id/head_search"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_marginLeft="15dp"-->
+            <!--android:layout_marginRight="20dp"-->
+            <!--android:gravity="center"-->
+            <!--android:text="@string/search"-->
+            <!--android:textColor="@color/black"-->
+            <!--android:textSize="15dp"-->
+            <!--android:visibility="gone" />-->
+        <!--右上角图片按键-->
+        <!--<ImageButton-->
+            <!--android:id="@+id/head_right_image"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_marginRight="11dp"-->
+            <!--android:background="@null"-->
+            <!--android:visibility="gone" />-->
+        <!--右上角文字按键-->
+        <!--<TextView-->
+            <!--android:id="@+id/head_right_text"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_marginRight="10dp"-->
+            <!--android:textColor="@color/black"-->
+            <!--android:textSize="13dp"-->
+            <!--android:visibility="gone" />-->
+
+    </RelativeLayout>
+
+</LinearLayout>

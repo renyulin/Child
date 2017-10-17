@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:drawable="@drawable/arrow"
+    tools:targetApi="lollipop">
+    <target
+        android:name="left"
+        android:animation="@animator/anim_left" />
+    <target
+        android:name="right"
+        android:animation="@animator/anim_right" />
+</animated-vector>
+
+    <!--需要配置动画粘合剂 animated-vector（arrow_anim.xml），
+    让属性动画作用于VectorDrawable：-->

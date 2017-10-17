@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<child.ryl.child.my_view.SwipeView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:layout_gravity="center"
+    android:minHeight="40dp"
+    android:orientation="horizontal">
+
+    <include layout="@layout/item_content" />
+
+    <include layout="@layout/item_menu" />
+
+</child.ryl.child.my_view.SwipeView>

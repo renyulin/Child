@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_calendar"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="#F5A0B3"
+    android:visibility="visible">
+
+    <TextView
+        android:id="@+id/calendarCenter"
+        style="@style/main_bar_text_style"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="8dp" />
+
+    <ImageButton
+        android:id="@+id/calendarLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="37dp"
+        android:layout_alignParentLeft="true"
+        android:background="@null"
+        android:contentDescription="@null"
+        android:padding="8dp"
+        android:src="@drawable/calendar_month_left" />
+
+    <ImageButton
+        android:id="@+id/calendarRight"
+        android:layout_width="wrap_content"
+        android:layout_height="37dp"
+        android:layout_alignParentRight="true"
+        android:background="@null"
+        android:contentDescription="@null"
+        android:padding="8dp"
+        android:src="@drawable/calendar_month_right" />
+
+    <child.ryl.child.my_view.CalendarView
+        android:id="@+id/calendar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/calendarCenter" />
+
+    <Button
+        android:id="@+id/activity_calendar_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/calendar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="确定" />
+
+    <Button
+        android:id="@+id/activity_calendar_second_button"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@+id/activity_calendar_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="系统日历" />
+
+    <Button
+        android:id="@+id/activity_calendar_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/calendar"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:text="自定义选择日历" />
+</RelativeLayout>

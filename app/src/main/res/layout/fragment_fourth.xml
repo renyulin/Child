@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#00f"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <child.ryl.child.my_view.CircleImageView
+            android:id="@+id/circle_image"
+            android:layout_width="180dp"
+            android:layout_height="150dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/lena"
+            app:border_color="#666666"
+            app:border_width="2dp" />
+
+        <Button
+            android:id="@+id/clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="clear" />
+    </LinearLayout>
+
+    <child.ryl.child.my_view.SpringProgressView
+        android:id="@+id/springProgressView"
+        android:layout_width="100dp"
+        android:layout_height="15dp"
+        android:layout_margin="15dp" />
+
+    <TextView
+        android:id="@+id/progress_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:background="#00f"
+        android:padding="5dp"
+        android:text="progressBtn"
+        android:textColor="#fff" />
+
+    <LinearLayout
+
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical">
+
+        <fragment
+            android:id="@+id/act_home_audio"
+            android:name="child.ryl.child.fragment.EvaluationHouseFragment"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"/>
+    </LinearLayout>
+</LinearLayout>

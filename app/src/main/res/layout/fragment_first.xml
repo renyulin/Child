@@ -1,0 +1,18 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <cn.bingoogolapple.bgabanner.BGABanner
+        android:id="@+id/banner_main_default_fragement"
+        style="@style/BannerDefaultStyle"
+        app:banner_transitionEffect="defaultEffect" />
+    <!--<ListView-->
+    <!--android:id="@+id/first_listView"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent">-->
+
+    <!--</ListView>-->
+
+</LinearLayout>

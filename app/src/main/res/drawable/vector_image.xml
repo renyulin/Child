@@ -1,0 +1,31 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="50dp"
+    android:height="50dp"
+    android:viewportHeight="50"
+    android:viewportWidth="50">
+    <path
+        android:name="square"
+        android:fillColor="#FF000000"
+        android:pathData="M10,10 L30,10 L30,30 L10,30 z" />
+</vector>
+
+    <!--1）如上是依次以 M10,10 -> L20,10 ->L20,20 ->
+    L10,20 -> z 进行绘制；
+    2）width/height 代表vector的大小；
+    viewportWidth/viewportHeight则代表把vector均匀分
+    为24整份，pathData就按照这里的标准来绘制。-->
+
+    <!--SVG是一套语法规范，在前端中使用。 Vector只实现了SVG
+       语法的Path标签（为了提高解析效率），在Android中使用。
+
+       Vector的语法通过字母和数字的组合来描述一个路径，
+       不同字母则代表不同含义，例如：
+
+       M = moveto(M X,Y): 将画笔移动到指定的坐标位置
+       L = lineto(L X,Y): 画直线到指定的坐标位置
+       Z = closepath(): 关闭路径
+       Vector还提供了一些封装好的方法：
+
+       H = horizontal lineto(H X): 画水平线到指定的X坐标位置
+       V = vertical lineto(V Y): 画垂直线到指定的Y坐标位置
+       例如下面这个 Vector Asset 代表一个黑色的正方形-->

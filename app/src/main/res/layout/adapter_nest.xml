@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:paddingTop="5dp">
+
+        <TextView
+            android:id="@+id/diandiandian"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="点点点"
+            android:textSize="17dp" />
+
+        <ImageView
+            android:id="@+id/adapter_nest_answer"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="2dp"
+            android:layout_marginRight="8dp"
+            android:padding="7dp"
+            android:src="@drawable/aboutme2" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/a_line" />
+
+    <child.ryl.child.my_view.MyListView
+        android:id="@+id/myListView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    </child.ryl.child.my_view.MyListView>
+
+    <TextView
+        android:id="@+id/zoom"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:textColor="#75b7ee"
+        android:text="点点点"
+        android:textSize="17dp" />
+</LinearLayout>

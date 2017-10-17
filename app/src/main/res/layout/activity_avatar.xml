@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_avatar_relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#333333">
+
+    <ImageView
+        android:id="@+id/activity_avatar_image"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_centerInParent="true"
+        android:padding="2dp"
+        android:src="@drawable/lena"
+        android:transitionName="basic" />
+
+    <RatingBar
+        android:id="@+id/activity_avatar_ratingBar"
+        style="@style/yellowRatingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="15dp"
+        android:layout_below="@+id/activity_avatar_image"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:isIndicator="true"
+        android:numStars="5"
+        android:rating="4" />
+</RelativeLayout>

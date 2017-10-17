@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="child.ryl.child">
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!--android:hardwareAccelerated="false"&ndash;&gt; PowerImageView-->
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activity.StartupHomepageActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activity.SidePullActivity" />
+        <activity android:name=".activity.XListViewActivity" />
+        <activity android:name=".activity.MultiLayoutListViewActivity" />
+        <activity android:name=".activity.HorizontalListViewActivity" />
+        <activity android:name=".activity.ListViewButtonActivity" />
+        <activity android:name=".activity.AvatarActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".activity.AccessActivity" />
+        <activity android:name=".activity.SDCardTestActivity" />
+        <activity android:name=".activity.FileActivity" />
+        <activity android:name=".activity.FileTestActivity" />
+        <activity android:name=".activity.PictureActivity" />
+        <activity android:name=".base.BaseActivity" />
+        <activity android:name=".activity.TitleTestActivity" />
+        <activity android:name=".activity.CarouselActivity" />
+        <activity android:name=".activity.FlowLayoutActivity" />
+        <activity android:name=".activity.CalendarActivity" />
+        <activity android:name=".activity.XmlSaveActivity" />
+        <activity android:name=".activity.ExpandableActivity" />
+        <activity android:name=".activity.InterfaceActivity" />
+        <activity android:name=".activity.FlowAllActivity" />
+        <activity android:name=".activity.FlowActivity" />
+        <activity android:name=".activity.SerializeActivity" />
+        <activity android:name=".activity.SerializeTestActivity" />
+        <activity android:name=".activity.Ioc1Activity" />
+        <activity android:name=".activity.Ioc2Activity" />
+        <activity android:name=".activity.IOCActivity" />
+        <activity android:name=".activity.ListViewTestActivity" />
+        <activity android:name=".activity.NestListViewActivity" />
+        <activity android:name=".activity.DrawViewActivity" />
+        <activity android:name=".activity.ShowLocationDialogActivity" />
+        <activity android:name=".activity.HtmlShowActivity">
+            <intent-filter>
+                <action android:name="html_act" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".danli.SingletonActOne" />
+        <activity android:name=".danli.SingletonActTwo" />
+        <activity android:name=".activity.ImgActivity" />
+        <activity android:name=".activity.PlayGifActivity" />
+        <activity android:name=".update_photo.choosephotos.ChoosePhotosActivity" />
+        <activity android:name=".update_photo.choosephotos.ImageGridActivity" />
+        <activity android:name=".update_photo.UpdateInfoActivity" />
+        <activity android:name=".activity.AddressBookActivity" />
+        <activity android:name=".alibaba.MainActivity" />
+        <activity android:name=".alibaba.OnePlusNLayoutActivity" />
+        <activity android:name=".alibaba.RootActivity" />
+        <activity android:name=".alibaba.TestActivity" />
+        <activity android:name=".alibaba.VLayoutActivity" />
+        <activity android:name=".activity.AudioListActivity" />
+        <activity android:name=".activity.ActActivity" />
+        <activity android:name=".activity.PrimarySqlActivity" />
+        <activity android:name=".activity.SqlActivity" />
+        <activity android:name=".test.TestActivity" />
+        <activity android:name=".activity.ViewAndValueActivity" />
+        <activity android:name=".activity.ByteTest" />
+        <activity android:name=".activity.AddPointActivity" />
+
+        <service android:name=".service.DownloadService" />
+        <!--authorities="你的包名+fileprovider" -->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="child.ryl.child.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths" />
+        </provider>
+    </application>
+</manifest>

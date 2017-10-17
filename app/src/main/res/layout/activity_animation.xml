@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/imageM"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:src="@mipmap/ic_launcher" />
+
+    <!--在像ImageView、ImageButton这样的控件中使用是非常简单的：-->
+    <!-- 注意:这里用的是srcCompat -->
+    <!--app:srcCompat="@drawable/vector_image"-->
+    <ImageView
+        android:id="@+id/imageK"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:src="@drawable/arrow_anim" />
+
+    <ImageView
+        android:id="@+id/imageC"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:src="@drawable/path_anim" />
+
+    <ImageView
+        android:id="@+id/imageF"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:src="@drawable/fivestar_anim" />
+
+    <Button
+        android:id="@+id/myButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/app_name" />
+</LinearLayout>

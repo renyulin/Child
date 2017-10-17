@@ -1,0 +1,76 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <child.ryl.child.my_view.ExpandableLayout
+        android:id="@+id/app_detail_safety_info"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/collapse_value"
+            android:layout_width="fill_parent"
+            android:layout_height="33dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="33dp"
+                android:layout_marginLeft="13dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="选择种类"
+                android:textColor="#b2b2b2"
+                android:textSize="14dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:gravity="right|center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/icon_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="12dp"
+                    android:src="@drawable/go_backh" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/expand_value"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#ff0000"
+            android:orientation="horizontal"
+            android:paddingBottom="8dip"
+            android:paddingTop="8dip">
+
+            <ImageButton
+                android:id="@+id/btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="30dp"
+                android:background="@null"
+                android:src="@drawable/clock"
+                android:textColor="#0A84BD"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/text_layout_testId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_toRightOf="@id/btn"
+                android:text="隐藏的内容"
+                android:textColor="#000000"
+                android:textSize="18sp"/>
+        </RelativeLayout>
+    </child.ryl.child.my_view.ExpandableLayout>
+</RelativeLayout>
