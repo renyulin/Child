@@ -83,6 +83,7 @@
         <activity android:name=".activity.ViewAndValueActivity" />
         <activity android:name=".activity.ByteTest" />
         <activity android:name=".activity.AddPointActivity" />
+        <activity android:name=".alibaba.FirstUseActivity" />
 
         <service android:name=".service.DownloadService" />
         <!--authorities="你的包名+fileprovider" -->

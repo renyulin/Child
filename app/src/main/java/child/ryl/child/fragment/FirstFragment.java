@@ -30,6 +30,8 @@ import child.ryl.child.activity.AddressBookActivity;
 import child.ryl.child.alibaba.RootActivity;
 import child.ryl.child.dialog.BottomSheetDialogView;
 import child.ryl.child.my_view.DragImageView;
+import child.ryl.child.test.A;
+import child.ryl.child.test.Genericity;
 import child.ryl.child.utils.Utils;
 import child.ryl.child.viewpage.ADInfo;
 import child.ryl.child.viewpage.ImageCycleView;
@@ -186,11 +188,12 @@ public class FirstFragment extends Fragment implements View.OnClickListener {
 //        lp.setMargins(5, 0, 5, 0);
 //        point.setLayoutParams(lp);
 //    }
-
     @Override
     public void onResume() {
         super.onResume();
         mAdView.startImageCycle();
+        A a = new A();
+        a.way();
     }
 
     @Override
@@ -207,6 +210,6 @@ public class FirstFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        startActivity(new Intent(getActivity(),AddPointActivity.class));
+        startActivity(new Intent(getActivity(), AddPointActivity.class));
     }
 }
