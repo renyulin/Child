@@ -22,7 +22,7 @@ import child.ryl.child.adapter.HeaderViewRecyclerAdapter;
  */
 public class FilterAdapter extends HeaderViewRecyclerAdapter {
     private Context context;
-    private List<String> mItems;
+    List<Map<String, Object>> mapList;
     private ItemClick itemClick;
 
     public ItemClick getItemClick() {
@@ -33,14 +33,14 @@ public class FilterAdapter extends HeaderViewRecyclerAdapter {
         this.itemClick = itemClick;
     }
 
-    public FilterAdapter(Context context, List<String> mItems) {
+    public FilterAdapter(Context context, List<Map<String, Object>> mapList) {
         this.context = context;
-        this.mItems = mItems;
+        this.mapList = mapList;
     }
 
     @Override
     public int getItemViewCount() {
-        return mItems == null ? 0 : mItems.size();
+        return mapList == null ? 0 : mapList.size();
     }
 
     @Override
@@ -56,7 +56,7 @@ public class FilterAdapter extends HeaderViewRecyclerAdapter {
     @Override
     public RecyclerView.ViewHolder onCreateItemViewHolder(ViewGroup viewGroup, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.ali_adapter_item, null);
-        FilterAdapter.ItemViewHolder holder = new FilterAdapter.ItemViewHolder(view);
+        ItemViewHolder holder = new ItemViewHolder(view);
         return holder;
     }
 
@@ -80,7 +80,7 @@ public class FilterAdapter extends HeaderViewRecyclerAdapter {
 
     @Override
     public void onBindItemViewHolder(RecyclerView.ViewHolder viewHolder, final int position) {
-
+        final Map<String, Object> mapItem = mapList.get(position);
         final ItemViewHolder holder = (ItemViewHolder) viewHolder;
 
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(
@@ -95,7 +95,7 @@ public class FilterAdapter extends HeaderViewRecyclerAdapter {
             lp.setFullSpan(true);
             holder.itemView.setLayoutParams(lp);
             holder.itemView.setEnabled(false);
-        } else if (position == 15) {
+        } else if (position == 8) {
             StaggeredGridLayoutManager.LayoutParams lp = new StaggeredGridLayoutManager.
                     LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                     ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -117,7 +117,7 @@ public class FilterAdapter extends HeaderViewRecyclerAdapter {
             }
         }
         holder.title.setText(Integer.toString(position));
-        if (("1:" + position).equals(mItems.get(position))) {
+        if (("1:" + position).equals(mapItem.get("po"))) {
             holder.title.setBackgroundColor(Color.parseColor("#000fff"));
         } else {
             holder.title.setBackgroundColor(Color.parseColor("#ff5200"));
@@ -125,19 +125,19 @@ public class FilterAdapter extends HeaderViewRecyclerAdapter {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (("1:" + position).equals(mItems.get(position))) {
+                if (("1:" + position).equals(mapItem.get("po"))) {
                     holder.title.setBackgroundColor(Color.parseColor("#ff5200"));
-                    mItems.set(position, "0:" + position);
+                    mapItem.put("po", "0:" + position);
                 } else {
                     holder.title.setBackgroundColor(Color.parseColor("#000fff"));
-                    mItems.set(position, "1:" + position);
+                    mapItem.put("po", "1:" + position);
                 }
-                if (position < 15) {
-                    itemClick.callData(mItems.get(position), position, 1);
+                if (position < 8) {
+                    itemClick.callData((String) mapItem.get("id"), position, 1);
                 } else if (position < 35) {
-                    itemClick.callData(mItems.get(position), position, 2);
+                    itemClick.callData((String) mapItem.get("id"), position, 2);
                 } else {
-                    itemClick.callData(mItems.get(position), position, 3);
+                    itemClick.callData((String) mapItem.get("id"), position, 3);
                 }
             }
         });

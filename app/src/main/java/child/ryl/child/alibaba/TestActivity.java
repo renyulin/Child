@@ -32,7 +32,6 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
-import android.widget.EditText;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -45,49 +44,57 @@ import child.ryl.child.R;
  * alibaba
  */
 public class TestActivity extends Activity implements FilterAdapter.ItemClick {
-    FilterAdapter adapter;
-    List<String> strings;
+    FilterAdapter filterAdapter;
+    List<Map<String, Object>> mapList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
 
-        final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.main_view);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.main_view);
 
         StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(4, StaggeredGridLayoutManager.VERTICAL);
 
         recyclerView.setLayoutManager(layoutManager);
 
-        findViewById(R.id.jump).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                EditText position = (EditText) findViewById(R.id.position);
-                if (!TextUtils.isEmpty(position.getText())) {
-                    try {
-                        int pos = Integer.parseInt(position.getText().toString());
-                        recyclerView.scrollToPosition(pos);
-                    } catch (Exception e) {
-                        Log.e("VlayoutActivity", e.getMessage(), e);
-                    }
-                }
-            }
-        });
+//        findViewById(R.id.jump).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                EditText position = (EditText) findViewById(R.id.position);
+//                if (!TextUtils.isEmpty(position.getText())) {
+//                    try {
+//                        int pos = Integer.parseInt(position.getText().toString());
+//                        recyclerView.scrollToPosition(pos);
+//                    } catch (Exception e) {
+//                        Log.e("VlayoutActivity", e.getMessage(), e);
+//                    }
+//                }
+//            }
+//        });
 
 
-        recyclerView.addItemDecoration(new RecyclerView.ItemDecoration() {
-            public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
-                outRect.set(4, 4, 4, 4);
-            }
-        });
+//        recyclerView.addItemDecoration(new RecyclerView.ItemDecoration() {
+//            public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
+//                outRect.set(4, 4, 4, 4);
+//            }
+//        });
         recyclerView.setItemAnimator(null);
-        strings = new ArrayList<>();
-        for (int i = 0; i < 63; i++) {
-            strings.add("0");
+        mapList = new ArrayList<>();
+        String[] names = new String[]{"特色", "抢优惠", "地铁沿线", "优质学府", "低首付", "现房",
+                "精装房", "品牌房企", "类型", "普宅", "洋房", "商业", "公寓", "别墅"};
+        String[] ids = new String[]{"", "isDicount", "isSubWay", "isSchoolArea",
+                "isPayment", "existinfo", "isDecorate", "isBrandHouse", "", "1", "2", "3", "4", "5"};
+
+        for (int i = 0; i < names.length; i++) {
+            Map<String, Object> map = new HashMap<>();
+            map.put("name", names[i]);
+            map.put("id", ids[i]);
+            mapList.add(map);
         }
-        adapter = new FilterAdapter(this, strings);
-        recyclerView.setAdapter(adapter);
-        adapter.setItemClick(this);
+        filterAdapter = new FilterAdapter(this, mapList);
+        recyclerView.setAdapter(filterAdapter);
+        filterAdapter.setItemClick(this);
 //        recyclerView.setAdapter(
 //                new RecyclerView.Adapter() {
 //                    @Override
@@ -142,30 +149,45 @@ public class TestActivity extends Activity implements FilterAdapter.ItemClick {
     private Map<Integer, String> type2 = new HashMap<>();
     private Map<Integer, String> type3 = new HashMap<>();
     private List<Map<Integer, String>> maps = new ArrayList<>();
+    Map<String, Object> moreMapBack = new HashMap<>();
 
     @Override
     public void callData(String data, int position, int type) {
+        if (type == 1) {
+            if (!"1".equals(moreMapBack.get(data))) {
+                moreMapBack.put(data, "1");
+            } else {
+                moreMapBack.put(data, "");
+            }
+        } else if (type == 2) {
+            if (data.equals(moreMapBack.get("projectType"))) {
+                moreMapBack.put("projectType","");
+            }else {
+                moreMapBack.put("projectType",data);
+            }
+        }
         if (maps.get(type - 1).containsKey(position)) {
             maps.get(type - 1).remove(position);
         } else {
             if (type == 2) {
                 Map<Integer, String> map = maps.get(type - 1);
-                for (Integer key : map.keySet()) {
+                for (Integer key : map.keySet()) {//单选，移除状态
                     maps.get(type - 1).remove(key);
-                    strings.set(key, "0:" + key);
-                    adapter.notifyDataSetChanged();
+                    Map<String, Object> item = mapList.get(key);
+                    item.put("po", "0:" + key);
                 }
+                filterAdapter.notifyDataSetChanged();
             }
             maps.get(type - 1).put(position, data);
         }
-        Log.e("dddddddddddddd", maps.toString());
+        Log.e("dddddddddddddd",moreMapBack.toString());
     }
 
-    static class MainViewHolder extends RecyclerView.ViewHolder {
-
-        public MainViewHolder(View itemView) {
-            super(itemView);
-        }
-    }
+//    class MainViewHolder extends RecyclerView.ViewHolder {
+//
+//        public MainViewHolder(View itemView) {
+//            super(itemView);
+//        }
+//    }
 
 }

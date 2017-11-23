@@ -17,7 +17,15 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.text.ParseException;
@@ -228,6 +236,7 @@ public class Utils {
             oldPath.delete();
         }
     }
+
     /**
      * String转Int
      *
@@ -313,9 +322,64 @@ public class Utils {
         sb.append(remain);
         return sb.toString();
     }
+
     public static boolean isConnected(Context context) {
         ConnectivityManager conn = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo info = conn.getActiveNetworkInfo();
         return (info != null && info.isConnected());
+    }
+
+    /**
+     * 流式存储
+     *
+     * @param data
+     */
+    public static void saveStreamData(Context context, String data) {
+        FileOutputStream outputStream;
+        BufferedWriter bufferedWriter = null;
+        try {
+            outputStream = context.openFileOutput("data", Context.MODE_PRIVATE);
+            bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream));
+            bufferedWriter.write(data);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (bufferedWriter != null) {
+                    bufferedWriter.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static String getStreamData(Context context, String data) {
+        StringBuilder stringBuilder = new StringBuilder();
+        FileInputStream inputStream;
+        BufferedReader bufferedReader = null;
+        try {
+            inputStream = context.openFileInput("data");
+            bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+            String line = "";
+            while ((line = bufferedReader.readLine()) != null) {
+                stringBuilder.append(line);
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (bufferedReader != null) {
+                    bufferedReader.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return stringBuilder.toString();
     }
 }

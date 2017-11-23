@@ -61,8 +61,7 @@ public class AvatarActivity extends Activity implements View.OnClickListener, Vi
 
     //运用imageLoader从网络获取图片
     private void imageHttp(String url) {
-        ImageLoader imageLoader;
-        imageLoader = ImageLoader.getInstance();
+        ImageLoader imageLoader = ImageLoader.getInstance();
         imageLoader.init(ImageLoaderConfiguration.createDefault(this));
         imageLoader.displayImage(url, imageView);
     }

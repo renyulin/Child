@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +19,7 @@ import java.util.List;
 
 import child.ryl.child.R;
 import child.ryl.child.activity.ListViewTestActivity;
+import child.ryl.child.activity.MyFragmentActivity;
 import child.ryl.child.activity.NestListViewActivity;
 import child.ryl.child.adapter.SecondAdapter;
 import child.ryl.child.danli.SingletonActOne;
@@ -96,7 +98,9 @@ public class SecondFragment extends Fragment implements View.OnClickListener, Ad
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Log.i("aaa", "" + position);
+        if (position == 1) {
+            startActivity(new Intent(getActivity(), MyFragmentActivity.class));
+        }
         Toast.makeText(getActivity(), "您点击了第" + (position - 1) + "条", Toast.LENGTH_SHORT).show();
     }
 }

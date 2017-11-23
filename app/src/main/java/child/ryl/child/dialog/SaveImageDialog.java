@@ -1,6 +1,5 @@
 package child.ryl.child.dialog;
 
-import android.app.ActivityOptions;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -30,7 +29,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import child.ryl.child.R;
-import child.ryl.child.activity.ImgActivity;
 
 /**
  * 圆图对话框
@@ -94,7 +92,7 @@ public class SaveImageDialog extends Dialog implements View.OnClickListener {
                 MediaStore.Images.Media.insertImage(context.getContentResolver(), bitmap, "title", "description");
                 //Uri.fromFile(new File("/sdcard/Boohee/image.jpg"))
                 context.sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE,
-                        getUriForFile(context,"/sdcard/Boohee/image.jpg") ));
+                        getUriForFile(context, "/sdcard/Boohee/image.jpg")));
                 Toast.makeText(context, "图片保存成功", Toast.LENGTH_SHORT).show();
                 if (!bitmap.isRecycled()) {
                     bitmap.recycle();
@@ -115,7 +113,6 @@ public class SaveImageDialog extends Dialog implements View.OnClickListener {
     };
 
     public static Uri getUriForFile(Context context, String filePath) {
-
         Uri uri;
         String spack = context.getPackageName();
         if (Build.VERSION.SDK_INT >= 24) {

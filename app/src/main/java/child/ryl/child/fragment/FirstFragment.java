@@ -28,6 +28,7 @@ import child.ryl.child.activity.ActActivity;
 import child.ryl.child.activity.AddPointActivity;
 import child.ryl.child.activity.AddressBookActivity;
 import child.ryl.child.alibaba.RootActivity;
+import child.ryl.child.broadcast.BroadcastActivity;
 import child.ryl.child.dialog.BottomSheetDialogView;
 import child.ryl.child.my_view.DragImageView;
 import child.ryl.child.test.A;
@@ -39,7 +40,7 @@ import child.ryl.child.viewpage.ImageCycleView;
 /**
  * firstFragment
  */
-public class FirstFragment extends Fragment implements View.OnClickListener {
+public class FirstFragment extends Fragment implements View.OnClickListener, View.OnLongClickListener {
     private View view;
     private DragImageView dragImageView;
     private ImageCycleView mAdView;
@@ -146,6 +147,7 @@ public class FirstFragment extends Fragment implements View.OnClickListener {
             }
         }, 0, 200);
         mAdView.setImageResources(infos, mAdCycleViewListener);
+        textViews[5].setOnLongClickListener(this);
     }
 
     private ImageCycleView.ImageCycleViewListener mAdCycleViewListener = new ImageCycleView.ImageCycleViewListener() {
@@ -159,11 +161,7 @@ public class FirstFragment extends Fragment implements View.OnClickListener {
             } else if (position == 2) {
                 startActivity(new Intent(getActivity(), ActActivity.class));
             } else if (position == 3) {
-                if (Utils.isConnected(getActivity())) {
-                    Toast.makeText(getActivity(), "net", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(getActivity(), "net_error", Toast.LENGTH_SHORT).show();
-                }
+                startActivity(new Intent(getActivity(), BroadcastActivity.class));
             } else {
                 Toast.makeText(getActivity(), "content->" + info.getContent() +
                         ":" + position, Toast.LENGTH_SHORT).show();
@@ -211,5 +209,23 @@ public class FirstFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         startActivity(new Intent(getActivity(), AddPointActivity.class));
+    }
+
+    @Override
+    public boolean onLongClick(View v) {
+        switch (v.getId()){
+            case R.id.frame6:
+                if (textViews[0].getVisibility()==View.VISIBLE){
+                    for (int i=0;i<textViews.length-1;i++){
+                        textViews[i].setVisibility(View.GONE);
+                    }
+                }else {
+                    for (int i=0;i<textViews.length-1;i++){
+                        textViews[i].setVisibility(View.VISIBLE);
+                    }
+                }
+                break;
+        }
+        return true;
     }
 }

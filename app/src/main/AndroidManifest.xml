@@ -9,7 +9,9 @@
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <!--android:hardwareAccelerated="false"&ndash;&gt; PowerImageView-->
+    //即开机启动事件 开机会给广播发送一条消息
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!-- android:hardwareAccelerated="false"&ndash;&gt; PowerImageView -->
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="false"
@@ -24,7 +26,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".activity.SidePullActivity" />
         <activity android:name=".activity.XListViewActivity" />
         <activity android:name=".activity.MultiLayoutListViewActivity" />
@@ -59,6 +60,7 @@
         <activity android:name=".activity.HtmlShowActivity">
             <intent-filter>
                 <action android:name="html_act" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -84,9 +86,11 @@
         <activity android:name=".activity.ByteTest" />
         <activity android:name=".activity.AddPointActivity" />
         <activity android:name=".alibaba.FirstUseActivity" />
+        <activity android:name=".broadcast.BroadcastActivity" />
+        <activity android:name=".activity.MyFragmentActivity" />
 
         <service android:name=".service.DownloadService" />
-        <!--authorities="你的包名+fileprovider" -->
+        <!-- authorities="你的包名+fileprovider" -->
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="child.ryl.child.fileprovider"
@@ -96,5 +100,14 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/filepaths" />
         </provider>
+
+        <receiver
+            android:name=".broadcast.MyReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter android:priority="100">//数值越大越先接收
+                <action android:name="android.intent.action.MY_BROADCAST" />
+            </intent-filter>
+        </receiver>
     </application>
 </manifest>
