@@ -11,6 +11,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     //即开机启动事件 开机会给广播发送一条消息
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
     <!-- android:hardwareAccelerated="false"&ndash;&gt; PowerImageView -->
     <application
         android:allowBackup="true"

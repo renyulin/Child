@@ -1,62 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#00f"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <child.ryl.child.my_view.CircleImageView
-            android:id="@+id/circle_image"
-            android:layout_width="180dp"
-            android:layout_height="150dp"
-            android:layout_centerInParent="true"
-            android:src="@drawable/lena"
-            app:border_color="#666666"
-            app:border_width="2dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/clear"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="clear" />
-    </LinearLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#00f"
+                android:orientation="vertical">
 
-    <child.ryl.child.my_view.SpringProgressView
-        android:id="@+id/springProgressView"
-        android:layout_width="100dp"
-        android:layout_height="15dp"
-        android:layout_margin="15dp" />
+                <child.ryl.child.my_view.CircleImageView
+                    android:id="@+id/circle_image"
+                    android:layout_width="180dp"
+                    android:layout_height="150dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/lena"
+                    app:border_color="#666666"
+                    app:border_width="2dp" />
 
-    <TextView
-        android:id="@+id/progress_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:background="#00f"
-        android:padding="5dp"
-        android:text="progressBtn"
-        android:textColor="#fff" />
+                <Button
+                    android:id="@+id/clear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/circle_image"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:text="clear" />
 
-    <LinearLayout
+                <Button
+                    android:id="@+id/camera"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/circle_image"
+                    android:layout_marginTop="20dp"
+                    android:text="camera" />
+            </RelativeLayout>
 
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:orientation="vertical">
+            <child.ryl.child.my_view.SpringProgressView
+                android:id="@+id/springProgressView"
+                android:layout_width="100dp"
+                android:layout_height="15dp"
+                android:layout_margin="15dp" />
 
-        <fragment
-            android:id="@+id/act_home_audio"
-            android:name="child.ryl.child.fragment.EvaluationHouseFragment"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"/>
-    </LinearLayout>
-</LinearLayout>
+            <TextView
+                android:id="@+id/progress_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:background="#00f"
+                android:padding="5dp"
+                android:text="progressBtn"
+                android:textColor="#fff" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="vertical">
+
+                <fragment
+                    android:id="@+id/act_home_audio"
+                    android:name="child.ryl.child.fragment.EvaluationHouseFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <fragment
+                    android:id="@+id/fragment_net"
+                    android:name="child.ryl.child.fragment.NetFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

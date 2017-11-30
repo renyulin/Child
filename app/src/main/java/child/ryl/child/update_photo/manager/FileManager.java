@@ -2,9 +2,11 @@ package child.ryl.child.update_photo.manager;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -183,6 +185,25 @@ public class FileManager {
             }
         } else {
             oldPath.delete();
+        }
+    }
+
+    public static String getCameraPath(Context context) {
+        String rootPath = getImageFolder();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_hhmmssSSS", Locale.CHINA);
+        String name = sdf.format(Calendar.getInstance(Locale.CHINA).getTime()) + ".jpg";
+        File file = new File(context.getExternalFilesDir(rootPath), name);
+        String path = file.getPath();
+        return path;
+    }
+
+    public static Bitmap getLocalBitmap(String url) {
+        try {
+            FileInputStream fis = new FileInputStream(url);
+            return BitmapFactory.decodeStream(fis);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
         }
     }
 }
