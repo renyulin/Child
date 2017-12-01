@@ -46,12 +46,12 @@ public class MftPay {
     /**
      * 支付宝支付业务：入参app_id
      */
-    public static final String APPID = "201dds4";
+    public static final String APPID = "ddddd";
     /**
      * 商户私钥，pkcs8格式
      */
     public static final String RSA_PRIVATE =
-            "MIICeQIBADANBgkqhkiG9w0mHSCx3VQ==";
+            "dddddddddddddddddddd==";
 
     private static final int SDK_PAY_FLAG = 1;
 
@@ -126,7 +126,7 @@ public class MftPay {
             //随机字符串
             String nonce_str = ResourceUtils.createRandomString(32).toUpperCase();
             //通知地址
-            String notify_url = "http://app.fangxiaoer.com/Wxpayhousestickorder/notify";
+            String notify_url = "http://ddddddddd";
             //商户订单号
             String out_trade_no = orderId;
             //总金额(单位分):除去余额支付的部分
@@ -135,9 +135,9 @@ public class MftPay {
             //终端IP
             String IP = getIP.getIP();
             //商户号
-            String MCH_ID = "1414755502";
+            String MCH_ID = "dddddd";
             //安全码
-            String key = "F54DBA4F5B0345E0EC0CAF21F284F44D";
+            String key = "dddddddd";
 
             String url = "https://api.mch.weixin.qq.com/pay/unifiedorder";
 

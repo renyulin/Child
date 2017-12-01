@@ -40,7 +40,7 @@ public class OrderInfoUtil2_0 {
         keyValues.put("sign_type", "RSA");
         keyValues.put("timestamp", "日期");
         keyValues.put("version", versionCode);
-        keyValues.put("notify_url", "http://paysecuredhousestickorder/notify");
+        keyValues.put("notify_url", "http://dddddd/notify");
         return keyValues;
     }
 
