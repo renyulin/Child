@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by i on 2016/5/13.
+ *
  */
 public class DownloadService extends Service {
     public final static String URL_KEY = "url";
@@ -66,7 +66,7 @@ public class DownloadService extends Service {
 //            return 0;
 //            open(file);
             open(filePath, DownloadService.this);
-            stopSelf();
+            stopSelf();//停止服务
             return 0;
         }
         downloadManager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
@@ -169,7 +169,6 @@ public class DownloadService extends Service {
     }
 
     public static Uri getUriForFile(Context context, String filePath) {
-
         Uri uri;
         String spack = context.getPackageName();
         if (Build.VERSION.SDK_INT >= 24) {

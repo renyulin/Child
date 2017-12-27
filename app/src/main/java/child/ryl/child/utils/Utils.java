@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -382,5 +383,32 @@ public class Utils {
             }
         }
         return stringBuilder.toString();
+    }
+
+    /**
+     * 图片和资源转换
+     *
+     * @param resId
+     * @param context
+     * @return
+     */
+    public static Bitmap resourcesToBitmap(int resId, Context context) {
+        Bitmap bimap = BitmapFactory.decodeResource(context.getResources(), resId);
+        return bimap;
+    }
+
+    public static byte[] bitmapToByte(Bitmap bitmap) {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+        byte[] bytes = baos.toByteArray();
+        return bytes;
+    }
+
+    /**
+     * 将字节数组转为Bitmap对象
+     */
+    public static Bitmap byteToBitmap(byte[] b) {
+        Bitmap bitmap = BitmapFactory.decodeByteArray(b, 0, b.length);
+        return bitmap;
     }
 }
