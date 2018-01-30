@@ -53,6 +53,7 @@ public class CycleViewPager extends Fragment implements OnPageChangeListener {
 				R.layout.view_cycle_viewpager_contet, null);
 
 		viewPager = (BaseViewPager) view.findViewById(R.id.viewPager);
+		CycleUtil.controlViewPagerSpeed(getActivity(),viewPager,500);
 		indicatorLayout = (LinearLayout) view
 				.findViewById(R.id.layout_viewpager_indicator);
 

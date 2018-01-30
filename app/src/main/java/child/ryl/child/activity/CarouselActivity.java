@@ -78,7 +78,7 @@ public class CarouselActivity extends Activity {
         cycleViewPager.setWheel(true);
 
         // 设置轮播时间，默认5000ms
-        cycleViewPager.setTime(2000);
+        cycleViewPager.setTime(3500);
         //设置圆点指示图标组居中显示，默认靠右
         cycleViewPager.setIndicatorCenter();
     }
@@ -93,7 +93,6 @@ public class CarouselActivity extends Activity {
                         "position-->" + info.getContent(), Toast.LENGTH_SHORT)
                         .show();
             }
-
         }
 
     };

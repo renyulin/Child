@@ -39,8 +39,6 @@ public class NestListViewActivity extends Activity {
     }
 
     private void init() {
-
-
         strings = new ArrayList<>();
         for (int i = 0; i < 20; i++) {
             Bean bean = new Bean();
