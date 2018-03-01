@@ -39,5 +39,4 @@ public class RootActivity extends ListActivity {
     protected void onListItemClick(ListView l, View v, int position, long id) {
         startActivity(new Intent(this, mActivities[position]));
     }
-
 }

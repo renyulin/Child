@@ -48,4 +48,5 @@ dependencies {
     compile 'com.j256.ormlite:ormlite-android:5.0'
     compile 'com.j256.ormlite:ormlite-core:5.0'
     compile 'com.alibaba.android:vlayout:1.2.1'
+    compile 'com.squareup.okhttp3:okhttp:3.9.1'
 }

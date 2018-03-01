@@ -53,4 +53,5 @@
     <string name="look_more">查看更多</string>
     <string name="no_info">没有信息</string>
     <string name="no_more">没有更多信息</string>
+    <string name="net_error_no_connection">网络不稳定</string>
 </resources>
