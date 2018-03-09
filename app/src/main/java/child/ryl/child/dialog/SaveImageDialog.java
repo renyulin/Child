@@ -109,6 +109,7 @@ public class SaveImageDialog extends Dialog implements View.OnClickListener {
             // 在这里进行 http request.网络请求相关操作
             bitmap = getHttpBitmap("http://pic30.nipic.com/20130626/8174275_085522448172_2.jpg");
             handler.sendEmptyMessage(0x123);
+//            Bitmap bm =((BitmapDrawable) ((ImageView) image).getDrawable()).getBitmap();
         }
     };
 
