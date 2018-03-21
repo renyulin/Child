@@ -103,5 +103,6 @@ public class BroadcastActivity extends Activity implements View.OnClickListener 
         receiver = new NetWorkChangeReceiver();
         localManager.registerReceiver(receiver, intentFilter);
 //        sendBroadcast();
+//        sendOrderedBroadcast();
     }
 }
