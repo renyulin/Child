@@ -102,5 +102,6 @@ public class BroadcastActivity extends Activity implements View.OnClickListener 
         intentFilter.addAction("child.ryl.child.broadcast.LOCAL_BROADCAST");
         receiver = new NetWorkChangeReceiver();
         localManager.registerReceiver(receiver, intentFilter);
+//        sendBroadcast();
     }
 }

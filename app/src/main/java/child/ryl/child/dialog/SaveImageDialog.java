@@ -283,6 +283,34 @@ public class SaveImageDialog extends Dialog implements View.OnClickListener {
 //        }
 //        return pic;
 //    }
+    TT tt = new TT();
 
+    private void a() {
+        tt.setSs("d");
+        tt.ad();
+        short s = tt.d;
+    }
+}
+
+final class TT {
+    final short d = 0;
+
+    TT() {
+
+    }
+
+    private String ss;
+
+    public String getSs() {
+        return ss;
+    }
+
+    public void setSs(String ss) {
+        this.ss = ss;
+    }
+
+    public void ad() {
+
+    }
 }
 

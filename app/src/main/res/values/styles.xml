@@ -2,7 +2,7 @@
 
     <!-- Base application theme. -->
     <!--新版本studio无法加载布局，需要替换为：Base.Theme.AppCompat.Light.DarkActionBar-->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>

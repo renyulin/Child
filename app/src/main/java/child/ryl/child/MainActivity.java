@@ -91,6 +91,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
             }
             return true;
         }
+        //        Intent intent = new Intent(Intent.ACTION_MAIN);
+//        intent.addCategory(Intent.CATEGORY_HOME);
+//        startActivity(intent);
         return super.onKeyDown(keyCode, event);
     }
 }
