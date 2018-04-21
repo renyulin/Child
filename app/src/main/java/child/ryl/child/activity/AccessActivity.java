@@ -46,6 +46,7 @@ public class AccessActivity extends Activity implements View.OnClickListener {
         image = (ImageView) findViewById(R.id.activity_access_imageView);
         storage.setOnClickListener(this);
         extraction.setOnClickListener(this);
+        Log.e("e","g:"+getClass().getSimpleName());
     }
 
     @Override
