@@ -31,6 +31,7 @@ public class ByteTest extends Activity {
         setContentView(textView);
         textView.setPadding(50, 50, 50, 50);
         textView.setTextSize(50);
+        textView.setText("ByteTest");
         data();
         textView.setOnClickListener(new View.OnClickListener() {
             @Override

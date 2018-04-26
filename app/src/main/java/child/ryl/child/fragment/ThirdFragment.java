@@ -10,21 +10,24 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import child.ryl.child.R;
 import child.ryl.child.activity.AccessActivity;
+import child.ryl.child.activity.AssetsJsonActivity;
 import child.ryl.child.activity.ByteTest;
 import child.ryl.child.activity.CalendarActivity;
 import child.ryl.child.activity.CarouselActivity;
 import child.ryl.child.activity.DrawViewActivity;
+import child.ryl.child.activity.ExpandableActivity;
 import child.ryl.child.activity.FileActivity;
 import child.ryl.child.activity.FlowAllActivity;
-import child.ryl.child.activity.FlowLayoutActivity;
 import child.ryl.child.activity.HorizontalListViewActivity;
 import child.ryl.child.activity.IOCActivity;
 import child.ryl.child.activity.InterfaceActivity;
 import child.ryl.child.activity.ListViewButtonActivity;
 import child.ryl.child.activity.MultiLayoutListViewActivity;
-import child.ryl.child.activity.ExpandableActivity;
 import child.ryl.child.activity.PictureActivity;
 import child.ryl.child.activity.PlayGifActivity;
 import child.ryl.child.activity.PrimarySqlActivity;
@@ -36,9 +39,6 @@ import child.ryl.child.activity.XListViewActivity;
 import child.ryl.child.activity.XmlSaveActivity;
 import child.ryl.child.adapter.ThirdFragmentAdapter;
 import child.ryl.child.update_photo.UpdateInfoActivity;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * ThirdFragment
@@ -86,8 +86,9 @@ public class ThirdFragment extends Fragment implements AdapterView.OnItemClickLi
         list.add("播放本地gif图片18");//19
         list.add("上传头像到服务器19");//20
         list.add("数据库ormlite20");//21
-        list.add("valueAnimation和view应用");//22
-        list.add("bundle数据传递和转换");
+        list.add("valueAnimation和view应用21");//22
+        list.add("bundle数据传递和转换22");//23
+        list.add("assets文件夹json解析23");//24
     }
 
     @Override
@@ -161,6 +162,9 @@ public class ThirdFragment extends Fragment implements AdapterView.OnItemClickLi
                 break;
             case 22:
                 startActivity(new Intent(getActivity(), ByteTest.class));
+                break;
+            case 23:
+                startActivity(new Intent(getActivity(), AssetsJsonActivity.class));
                 break;
         }
     }

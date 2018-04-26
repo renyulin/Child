@@ -89,6 +89,7 @@
         <activity android:name=".alibaba.FirstUseActivity" />
         <activity android:name=".broadcast.BroadcastActivity" />
         <activity android:name=".activity.MyFragmentActivity" />
+        <activity android:name=".activity.AssetsJsonActivity" />
 
         <service android:name=".service.DownloadService" />
         <!-- authorities="你的包名+fileprovider" -->
